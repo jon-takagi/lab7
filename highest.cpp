@@ -20,23 +20,21 @@ int main()
 
 }
 const int* highest(int val, const int* start, const int* finish){
-    if(finish - start == 1) {
-        if(*finish == val) {
-            return finish;
-        } else if(*start == val) {
-            return start;
-        } else {
-            return nullptr;
-        }
-    }
-    if(start == finish) {
+    const int* median = start + ((*finish - *start) / 2);
+    if(start + 1 == finish) {
         if(*start == val) {
+            while(*(start + 1) == val) {
+                start += 1;
+            }
             return start;
         } else {
-            return nullptr;
+            while(*(finish + 1) == val) {
+                finish += 1;
+            }
+            return finish;
+
         }
     }
-    const int* median = start + ((finish - start) / 2);
     if(val == *median) {
         while(*(median + 1) == val) {
             median++;
