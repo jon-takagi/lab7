@@ -1,0 +1,6 @@
+using the debugger, i was able to determine the cause of one of my errors.
+The program would cause a segmentation fault when the recursive case did not terminate correctly.
+By adding a breakpoint at the `highest` function, I was able to check the median each recursive call
+Being able to single step through a program is very helpful, especially when working with pointers.
+
+Also, I had many issues with ensuring that the program used pointers correctly.

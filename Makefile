@@ -13,6 +13,8 @@ all: source-stats.wc highest
 source-stats.wc: source.txt
 	wc source.txt > source-stats.wc
 
+%.wc:%.txt
+	wc $< > $*-stats.wc
 clean:
 	rm -f *.o
 	rm -f *-stats.wc
